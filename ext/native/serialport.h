@@ -4,6 +4,7 @@
  * Daniel E. Shipton <dshipton@redshiptechnologies.com>
  * Tobin Richard <tobin.richard@gmail.com>
  * Ryan C. Payne <rpayne-oss@bullittsystems.com>
+ * Jens Alexander Ewald <jens@ififelse.net>
  *
  * This code is hereby licensed for public consumption under either the
  * GNU GPL v2 or greater.
@@ -21,7 +22,7 @@
 #ifndef _RUBY_SERIAL_PORT_H_
 #define _RUBY_SERIAL_PORT_H_
 
-#define RUBY_SERIAL_PORT_VERSION   "1.0.4"
+#define RUBY_SERIAL_PORT_VERSION   "1.0.5" // mark experimental version
 
 #include <ruby.h>    /* ruby inclusion */
 #ifdef RUBY_1_9      /* ruby io inclusion */
@@ -80,6 +81,7 @@ extern VALUE sRts, sDtr, sCts, sDsr, sDcd, sRi;
 
 /* Implementation specific functions. */
 VALUE RB_SERIAL_EXPORT sp_create_impl(VALUE class, VALUE _port);
+VALUE RB_SERIAL_EXPORT sp_listDevices_impl(VALUE class);
 VALUE RB_SERIAL_EXPORT sp_set_modem_params_impl(int argc, VALUE *argv, VALUE self);
 void RB_SERIAL_EXPORT get_modem_params_impl(VALUE self, struct modem_params *mp);
 VALUE RB_SERIAL_EXPORT sp_set_flow_control_impl(VALUE self, VALUE val);

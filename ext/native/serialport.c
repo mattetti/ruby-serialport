@@ -4,6 +4,7 @@
  * Daniel E. Shipton <dshipton@redshiptechnologies.com>
  * Jonas Bähr <jonas.baehr@fs.ei.tum.de>
  * Ryan C. Payne <rpayne-oss@bullittsystems.com>
+ * Jens Alexander Ewald <jens@ififelse.net>
  *
  * This code is hereby licensed for public consumption under either the
  * GNU GPL v2 or greater.
@@ -33,6 +34,17 @@ static VALUE sp_create(class, _port)
 {
    return sp_create_impl(class, _port);
 }
+
+
+/*
+ *  List all available devices (ClassMethod, OS X only for now)
+ */
+static VALUE sp_listDevices(class)
+VALUE class;
+{
+    return sp_listDevices_impl(class);
+}
+
 
 /*
  * Configure the serial port. You can pass a hash or multiple values
@@ -443,6 +455,7 @@ void Init_serialport()
 
    cSerialPort = rb_define_class("SerialPort", rb_cIO);
    rb_define_singleton_method(cSerialPort, "create", sp_create, 1);
+   rb_define_singleton_method(cSerialPort, "listDevices", sp_listDevices, 0);
 
    rb_define_method(cSerialPort, "get_modem_params", sp_get_modem_params, 0);
    rb_define_method(cSerialPort, "set_modem_params", sp_set_modem_params, -1);
