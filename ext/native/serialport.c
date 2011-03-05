@@ -482,14 +482,14 @@ void Init_serialport()
 
    rb_define_method(cSerialPort, "signals", sp_signals, 0);
    rb_define_method(cSerialPort, "get_signals", sp_signals, 0);
-   rb_define_method(cSerialPort, "rts", sp_get_rts, 0);
+   rb_define_method(cSerialPort, "rts",  sp_get_rts, 0);
    rb_define_method(cSerialPort, "rts=", sp_set_rts, 1);
-   rb_define_method(cSerialPort, "dtr", sp_get_dtr, 0);
+   rb_define_method(cSerialPort, "dtr",  sp_get_dtr, 0);
    rb_define_method(cSerialPort, "dtr=", sp_set_dtr, 1);
-   rb_define_method(cSerialPort, "cts", sp_get_cts, 0);
-   rb_define_method(cSerialPort, "dsr", sp_get_dsr, 0);
-   rb_define_method(cSerialPort, "dcd", sp_get_dcd, 0);
-   rb_define_method(cSerialPort, "ri", sp_get_ri, 0);
+   rb_define_method(cSerialPort, "cts",  sp_get_cts, 0);
+   rb_define_method(cSerialPort, "dsr",  sp_get_dsr, 0);
+   rb_define_method(cSerialPort, "dcd",  sp_get_dcd, 0);
+   rb_define_method(cSerialPort, "ri",   sp_get_ri, 0);
 
    rb_define_const(cSerialPort, "NONE", INT2FIX(NONE));
    rb_define_const(cSerialPort, "HARD", INT2FIX(HARD));
