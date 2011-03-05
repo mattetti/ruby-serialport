@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{http://github.com/jens-a-e/ruby-serialport/}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.4.2}
+  s.rubygems_version = %q{1.5.3}
   s.summary = %q{Library for using RS-232 serial ports.}
   s.test_files = [
     "test/miniterm.rb",
