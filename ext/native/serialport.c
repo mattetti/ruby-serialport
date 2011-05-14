@@ -455,7 +455,7 @@ void Init_serialport()
 
    cSerialPort = rb_define_class("SerialPort", rb_cIO);
    rb_define_singleton_method(cSerialPort, "create", sp_create, 1);
-   rb_define_singleton_method(cSerialPort, "listDevices", sp_listDevices, 0);
+   rb_define_singleton_method(cSerialPort, "devices", sp_listDevices, 0);
 
    rb_define_method(cSerialPort, "get_modem_params", sp_get_modem_params, 0);
    rb_define_method(cSerialPort, "set_modem_params", sp_set_modem_params, -1);

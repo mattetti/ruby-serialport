@@ -3,7 +3,7 @@
 -- !Please Note! --
 
 This is an experimental version of the official ruby-serialport, found at http://rubygems.org/gems/serialport
-Use with care! Added listDevices to find available ports on the system.
+Use with care! Added #devices to find available ports on the system.
 
 
 
@@ -17,12 +17,8 @@ The native Windows version of this library supports Microsoft's Visual C++, Borl
 
 -- Installation --
 
-This gem is hosted at Gemcutter. Before you can install this, or any other Gemcutter gem you must
-add it as a gem source:
-  gem sources -a http://gemcutter.org
-
 Then you can install the gem as normal:
-  sudo gem install serialport
+  gem install serialport
 
 -- Testing --
 
@@ -41,7 +37,7 @@ Ruby's copy of miniterm.c !
        NONE, HARD, SOFT, SPACE, MARK, EVEN, ODD -> anInteger
 
     ** Class methods **
-	  * listDevices() -> an Array of Hashes with ports found (OS X only, for now)
+	    * devices() -> an Array of Hashes with ports found (OS X only, for now)
       * new(port_num [, modem_parameters]) -> aSerialPort
       * open(port_num [, modem_parameters]) -> aSerialPort
       * open(port_num [, modem_parameters]) {|aSerialPort| block} ->
